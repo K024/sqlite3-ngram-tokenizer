@@ -7,7 +7,8 @@
                 "src"
             ],
             "sources": [
-                "src/main.c"
+                "src/main.c",
+                "src/utf8_decode.c"
             ]
         }
     ]

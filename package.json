@@ -1,14 +1,15 @@
 {
-  "name": "tokenizer",
-  "version": "1.0.0",
-  "description": "",
+  "name": "sqlite3-ngram-tokenizer",
+  "version": "0.0.1",
+  "description": "An ngram tokenizer for sqlite3 fts5",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "K024",
+  "license": "MIT",
   "dependencies": {
     "node-gyp": "^5.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/K024/sqlite3-ngram-tokenizer"
   }
 }
