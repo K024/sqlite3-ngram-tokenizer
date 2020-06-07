@@ -1,6 +1,6 @@
 {
   "name": "sqlite3-ngram-tokenizer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An ngram tokenizer for sqlite3 fts5",
   "main": "index.js",
   "author": "K024",

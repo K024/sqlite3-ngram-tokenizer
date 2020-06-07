@@ -67,11 +67,11 @@ int NgramCb(void *pCtx, int tflags, const char *pToken, int nToken, int iStart,
             int iEnd) {
     NgramContext *p = (NgramContext *)pCtx;
     int c, cl, start = 0, mid = 0, end;
+    utf8_decode_ctx uCtx;
+    utf8_decode_init(&uCtx, pToken, nToken);
 
-    utf8_decode_init(pToken, nToken);
-
-    c = utf8_decode_next();
-    end = utf8_decode_index();
+    c = utf8_decode_next(&uCtx);
+    end = utf8_decode_index(&uCtx);
     if (c == UTF8_END)
         return SQLITE_OK;
     if (c == UTF8_ERROR)
@@ -83,8 +83,8 @@ int NgramCb(void *pCtx, int tflags, const char *pToken, int nToken, int iStart,
         start = mid;
         mid = end;
         cl = c;
-        c = utf8_decode_next();
-        end = utf8_decode_index();
+        c = utf8_decode_next(&uCtx);
+        end = utf8_decode_index(&uCtx);
         if (c == UTF8_END)
             return SQLITE_OK;
         if (c == UTF8_ERROR)
